@@ -1,0 +1,20 @@
+<h1>コメント一覧</h1>
+
+<table>
+  <tr>
+    <th>タイトル</th>
+    <th>内容</th>
+  </tr>
+
+<% @comments.each do |comment| %>
+  <tr>
+    <td><%= comment.posts %></td>
+
+    <td><%= link_to '詳細を確認する', comment_path(comment.id) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br>
+
+<%= link_to '新しくブログを投稿する', new_comment_path %>
