@@ -8,9 +8,10 @@
 
 <% @comments.each do |comment| %>
   <tr>
-    <td><%= comment.posts %></td>
-
-    <td><%= link_to '詳細を確認する', comment_path(comment.id) %></td>
+    <td><%= comment.content %></td>
+    <td><%= link_to '詳細を確認する', comment_path(comment.id)%></td>
+    <td><%= link_to "ブログを編集する", edit_comment_path(comment.id) %></td>
+    <td><%= link_to 'ブログを削除する', comment_path(comment.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>  
   </tr>
 <% end %>
 </table>
